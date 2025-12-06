@@ -48,15 +48,14 @@ $result = $stmt->get_result();
         </thead>
         <tbody> 
          <?php while ($row = $result->fetch_assoc()): ?> 
-                <tr>
+                <tr id ="row-<?= $row['id'] ?>">
                     <td><?= htmlspecialchars($row['title']) ?></td>
-                    <td>$<?= htmlspecialchars($row['value']) ?></td>
+                    <td><?= ($row['value'] < 0 ? '-' : '') . '$' . number_format(abs($row['value']), 2) ?></td>
                     <td><?= htmlspecialchars($row['date']) ?></td>
                     <td>
-                        <form action="../dynamic_table/delete_row.php" method="POST" style="display:inline;">
-                            <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                            <button type="submit"><img src="../images/deleteicon.png" alt="Delete" class="table-icon"></button>
-                        </form>
+                        <button class = "delete-button" data-id="<?= $row['id'] ?>">
+                            <img src = "../images/deleteicon.png" class="table-icon" alt="Delete">
+                        </button>
                     </td>
                 </tr>
             <?php endwhile; ?>
@@ -64,7 +63,7 @@ $result = $stmt->get_result();
     </table>
 
     <h3>Add Entry</h3>
-    <form action="../dynamic_table/add_row.php" method="POST">
+    <form id="addForm">
         <label for="title">Category</label>
         <select name="title" id="title" required>
             <option value="">-- Select Category --</option>
@@ -86,9 +85,10 @@ $result = $stmt->get_result();
     </form>
 
     <h3>Chart</h3>
-    <canvas id="financeChart" width="400" height="200"></canvas>
+    <canvas id="financeChart"></canvas>
 
-  <script src="../script.js"></script>
+  <script src="../dynamic_table/finance.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="../dynamic_table/chart.js"></script>
 </body>
 </html>

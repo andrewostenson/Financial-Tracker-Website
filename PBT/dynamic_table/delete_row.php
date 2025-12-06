@@ -10,6 +10,5 @@ $stmt = $conn->prepare($sql);
 $stmt->bind_param("is", $id, $username);
 $stmt->execute();
 
-header("Location: ../protected_pages/fin.php");
-exit();
+echo json_encode(['success' => true]);
 ?>
