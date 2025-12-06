@@ -11,12 +11,12 @@ $name = $_SESSION['username']; //Store username from session
 
 ?>
 
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
   <meta charset="utf-8">
-  <title>Help</title>
+  <title>Live Stock View</title>
   <meta name="author" content="">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -35,5 +35,10 @@ $name = $_SESSION['username']; //Store username from session
             <a href = "help.php">Help</a>
         </nav>
     </div>
+
+    <p>Here you can view live stock information</p>
+    <canvas id="stockChart"></canvas>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="stockapi.js"></script>
 </body>
 </html>

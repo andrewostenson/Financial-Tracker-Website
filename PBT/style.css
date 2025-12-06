@@ -122,3 +122,8 @@ table img.table-icon {
     max-width: 300px;
     max-height: 300px;
 }
+
+#stockChart {
+    max-width: 250px;
+    max-height: 250px;
+}

@@ -67,7 +67,7 @@ $lastUpdate = $row['last_update'] ?? 'No updates yet';
 
     <a href="/PBT/account_managment/">View All Users</a>
     <a href="/PBT/account_managment/register.html">Register Another User</a><br>
-    <p>To-do: chart, stock market api, delete.php, auto negatives for table, email verification, help page</p>
+    <p>To-do: email verification, help page</p>
   <script src="../script.js"></script>
 </body>
 </html>
