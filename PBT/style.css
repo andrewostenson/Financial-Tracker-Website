@@ -65,8 +65,17 @@
     color: #333;
     background-color: #f5f5f5;
     padding: 10px 20px;
-    border: 1px solid #ccc; /* subtle border */
+    border: 1px solid #ccc;
+}
 
+.nav-bar a:hover {
+    background-color: #ddd;
+}
+
+.nav-bar a.current-page {
+    font-weight: bold;
+    background-color: #ddd;
+    pointer-events: none;
 }
 
 .header-container {
@@ -124,6 +133,75 @@ table img.table-icon {
 }
 
 #stockChart {
-    max-width: 250px;
-    max-height: 250px;
+    max-width: 100%;
+    max-height: 400px;
+}
+
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    flex: 1 1 200px;
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.settings-container {
+    text-align: center;
+    border: 2px solid black;
+    background: lightgrey;
+    max-width: 400px;
+    width: 100%;
+    align-items: center;
+}
+
+.settings-card {
+    margin: 0;
+    padding: 20px 20px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.settings-card:last-child {
+    border-bottom: none;
+}
+
+.settings-card:hover {
+    background-color: #ddd;
+}
+
+.settings-icon {
+    width: 20px;
+    height: 20px;
+}
+
+#settings-header {
+    border-bottom: 2px black solid;
+    background: #f5f5f5;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
 }

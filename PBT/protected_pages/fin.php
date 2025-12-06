@@ -30,13 +30,20 @@ $result = $stmt->get_result();
         <h1>Income Tracker</h1>
         <nav class="nav-bar">
             <a href="home.php">Home</a>
-            <a href="fin.php">Income/Expenses</a>
+            <a href="fin.php" class = "current-page">Income/Expenses</a>
             <a href="stockview.php">Live Stock View</a>
             <a href ="settings.php">Settings</a>
-            <a href = "help.php">Help</a>
         </nav>
     </div>
-    <p>Here you can track your income and expenses, rate of spending, and other financial information.</p>
+    <p>Here you can track your income and expenses as well as view a visual representation of your spending habits. 
+        This page allows you to add, view, and delete financial entries to help you manage your budget effectively.
+        Tools like this are essential for maintaining financial health and achieving your monetary goals.
+    </p>
+
+    <p>Tracking your finances regularly helps you identify patterns and make informed decisions about your spending and saving habits.
+        By categorizing your income and expenses, you can see where your money is going and adjust accordingly.
+        Use the form below to add new entries, and watch the pie chart update to reflect your spending distribution.
+    </p>
     <table border="1" class = "finance-table">
         <thead>
             <tr>
@@ -84,7 +91,9 @@ $result = $stmt->get_result();
         <button type="submit">Add Row</button>
     </form>
 
-    <h3>Chart</h3>
+    <h3>Expense pie chart</h3>
+    <p>As you add entries, this chart will update to show the distribution of your expenses.</p>
+    <p>(Note: Only expenses are included in this chart, income can be viewed on the home page)</p>
     <canvas id="financeChart"></canvas>
 
   <script src="../dynamic_table/finance.js"></script>

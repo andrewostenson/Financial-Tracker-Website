@@ -50,24 +50,56 @@ $lastUpdate = $row['last_update'] ?? 'No updates yet';
     <div class ="header-container">
         <h1><?php echo $name ?>'s Dashboard</h1>
         <nav class="nav-bar">
-            <a href="home.php">Home</a>
+            <a href="home.php" class = "current-page">Home</a>
             <a href="fin.php">Income/Expenses</a>
             <a href="stockview.php">Live Stock View</a>
             <a href ="settings.php">Settings</a>
-            <a href = "help.php">Help</a>
         </nav>
     </div>
 
-    <p>This is your personal online budget tracker! Here you can track your income, expenses, and accounts.</p>
+    <p>Welcome to your online budget tracker! The goal of this site is to introduce you to the idea of budgeting,
+        tracking your expenses, and managing your finances better. By keeping a close eye on your income and expenses,
+        you can make informed decisions about your spending habits and work towards achieving your financial goals.
+    </p>
     <h2>Financial Overview</h2>
-    <p>[PREVIOUS WEEK INCOME]: $<?= number_format($totalIncome, 2) ?></p><br>
-    <p>[PREVIOUS WEEK EXPENSE]: $<?= number_format($totalExpense, 2) ?></p><br>
-    <p>[NET ACCOUNT BALANCE]: $<?= number_format($netBalance, 2) ?></p><br>
-    <p>[DATE OF LAST ACCOUNT UPDATE]: <?= $lastUpdate ?></p><br>
+    <div class="dashboard-cards">
+        <div class="card">
+            <h3>Total Income</h3>
+            <p>$<?= number_format($totalIncome, 2) ?></p>
+        </div>
+        <div class="card">
+            <h3>Total Expenses</h3>
+            <p>$<?= number_format($totalExpense, 2) ?></p>
+        </div>
+        <div class="card">
+            <h3>Net Balance</h3>
+            <p>$<?= number_format($netBalance, 2) ?></p>
+        </div>
+        <div class="card">
+            <h3>Last Update</h3>
+            <p><?= $lastUpdate ?></p>
+        </div>
+    </div>
 
-    <a href="/PBT/account_managment/">View All Users</a>
-    <a href="/PBT/account_managment/register.html">Register Another User</a><br>
-    <p>To-do: email verification, help page</p>
-  <script src="../script.js"></script>
+    <h2>Who this site is for</h2>
+    <p>Are you new to budgeting and want to take control of your finances? 
+        This site is designed to help you get started with managing your money effectively.
+        Tracking your income and expenses can feel overwhelming, but the aim here is to make it 
+        as simple as possible and easy to understand.
+    </p>
+
+    <h2>How to use this site</h2>
+    <p>Use the navigation menu to access different features such as tracking your income and expenses, viewing live stock market data, 
+        and adjusting your settings. Regularly update your financial entries to keep your budget accurate and make informed 
+        decisions based on the insights provided.
+    </p>
+
+    <p>
+        This site is a starting point for your financial journey. As you become more comfortable with budgeting,
+        you can explore additional features and tools to enhance your financial management skills.
+        This is a tool intended to help you learn the basics of budgeting and financial tracking. Happy budgeting!
+    </p>
+
+
 </body>
 </html>

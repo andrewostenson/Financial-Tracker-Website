@@ -30,20 +30,32 @@ $name = $_SESSION['username']; //Store username from session
             <a href="home.php">Home</a>
             <a href="fin.php">Income/Expenses</a>
             <a href="stockview.php">Live Stock View</a>
-            <a href ="settings.php">Settings</a>
-            <a href = "help.php">Help</a>
+            <a href ="settings.php" class = "current-page">Settings</a>
         </nav>
     </div>
 
 <div class = "creation-page">
-  <div class = "creation-container">
-  <select id = "themeSelector">
-        <option value = "light-mode">Light Mode</option>
-        <option value = "dark-mode">Dark Mode</option>
-        <option value = "blue-mode">Blue Mode</option>
-  </select>
-  <a href="../account_managment/logout.php">Log out</a>
-  <a href="register.html">Delete account</a>
+  <div class = "settings-container">
+    <p id ="settings-header"><?php echo $name ?>'s Settings</p>
+    <div class = "settings-card">
+      <img src = "../images/arrow.png" class = "settings-icon">
+      <span>
+          <select id = "themeSelector">
+            <option value = "light-mode">Light Mode</option>
+            <option value = "dark-mode">Dark Mode</option>
+            <option value = "blue-mode">Blue Mode</option>
+        </select>
+      </span>
+
+    </div>
+
+  <a href="../account_managment/logout.php" class = "settings-card">
+    <img src = "../images/arrow.png" class = "settings-icon"><span>Log out</span>
+  </a>
+
+  <a href="register.html" class = "settings-card">
+    <img src = "../images/arrow.png" class = "settings-icon"><span>Delete account</span>
+</a>
 </div>
 </div>
   <script src="../script.js"></script>

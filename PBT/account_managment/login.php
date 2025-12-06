@@ -1,5 +1,5 @@
 <?php
-include '/PBT/config/config.php';
+include '../config/config.php';
 
 //Connect block
 $conn = new mysqli("localhost", "root", "", "pbtusers");
