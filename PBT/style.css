@@ -20,8 +20,8 @@
 }
 
 .blue-mode {
-    color: white;
-    background: #BDC7E2;
+    color: rgb(255, 255, 255);
+    background: rgba(168, 177, 201, 0.859)
 }
 
 .creation-page {
@@ -40,6 +40,8 @@
     max-width: 400px;
     width: 100%;
     align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
 }
 
 .creation-header{
@@ -51,8 +53,23 @@
     padding: 15px;
     text-align: center;
     box-sizing: border-box;
+    border-radius: 8px;
 }
 
+.creation-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    width: 70%;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.reglogSwitch {
+    margin-top: 30px;
+}
 
 .nav-bar {
     display: flex;
@@ -87,6 +104,8 @@
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     border-radius: 8px;
     padding: 0 20px;
+    position: sticky;
+    top: 0;
 }
 
 .dark-mode .header-container {
@@ -154,8 +173,41 @@ table img.table-icon {
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
+.dark-mode .card {
+    flex: 1 1 200px;
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+}
+
 .card h3 {
     margin-bottom: 10px;
+}
+
+.dark-mode .card h3 {
+    margin-bottom: 10px;
+    color: #f5f5f5;
+}
+
+.blue-mode .card {
+    flex: 1 1 200px;
+    background-color: #697FBD;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+
+}
+
+.blue-mode .card h3 {
+    margin-bottom: 10px;
+    color: white;
 }
 
 .card:hover {
@@ -170,6 +222,8 @@ table img.table-icon {
     max-width: 400px;
     width: 100%;
     align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .settings-card {
@@ -181,6 +235,8 @@ table img.table-icon {
     align-items: center;
     cursor: pointer;
     transition: background-color 0.2s;
+    text-decoration: none;
+    color: black;
 }
 
 .settings-card:last-child {
@@ -196,7 +252,7 @@ table img.table-icon {
     height: 20px;
 }
 
-#settings-header {
+.settings-header {
     border-bottom: 2px black solid;
     background: #f5f5f5;
     width: 100%;
@@ -204,4 +260,37 @@ table img.table-icon {
     padding: 15px;
     text-align: center;
     box-sizing: border-box;
+    border-radius: 8px;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.dark-mode .settings-header {
+    border-bottom: 2px black solid;
+    background: #333;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    color: #f5f5f5;
+}
+
+.blue-mode .settings-header {
+    border-bottom: 2px black solid;
+    background: #697FBD;
+    width: 100%;
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    box-sizing: border-box;
+    color: white;
+}
+
+.blank {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
 }

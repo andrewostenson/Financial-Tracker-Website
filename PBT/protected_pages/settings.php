@@ -36,7 +36,7 @@ $name = $_SESSION['username']; //Store username from session
 
 <div class = "creation-page">
   <div class = "settings-container">
-    <p id ="settings-header"><?php echo $name ?>'s Settings</p>
+    <p class ="settings-header"><?php echo $name ?>'s Settings</p>
     <div class = "settings-card">
       <img src = "../images/arrow.png" class = "settings-icon">
       <span>
@@ -53,9 +53,13 @@ $name = $_SESSION['username']; //Store username from session
     <img src = "../images/arrow.png" class = "settings-icon"><span>Log out</span>
   </a>
 
-  <a href="register.html" class = "settings-card">
-    <img src = "../images/arrow.png" class = "settings-icon"><span>Delete account</span>
-</a>
+  <form action="../account_managment/delete.php" method="POST" onsubmit="return confirm('Delete your account?');" class = "settings-card">
+        <img src="../images/arrow.png" class="settings-icon">
+        <button class = "blank">
+          <span>Delete account</span>
+        </button>
+  </form>
+
 </div>
 </div>
   <script src="../script.js"></script>

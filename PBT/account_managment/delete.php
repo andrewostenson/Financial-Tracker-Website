@@ -1,28 +1,22 @@
 <?php
-session_start();
+include '../config/config.php';
 
-if (!isset($_SESSION['username']) || !isset($_SESSION['id'])) {
+if (!isset($_SESSION['username'])) {
     die("Unauthorized action.");
 }
-    $conn = new mysqli("localhost", "root", "", "pbtusers");
 
-    if($conn->connect_error) {
-        echo "Connection failed to db" . $conn->connect_error;
-    }
+$name = $_SESSION['username'];
 
-    $id = $_POST['id'];
+$stmt = $conn->prepare("DELETE FROM users WHERE name=?");
+$stmt->bind_param("s", $name);
 
-    $stmt = $conn->prepare("DELETE FROM users WHERE id=?");
-    $stmt->bind_param("i", $id);
+if($stmt->execute()) {
+    session_destroy();
+    header("Location: ../account_managment/register.html");
+    exit();
+}   
 
-    if($stmt->execute()) {
-        session_destroy();
-        echo "User record deleted <a href = 'register.html'>Create new account</a>";
-    }   
-    else {
-        echo "Failed to delete record" . $stmt->error;
-    }
-
-
-
+else {
+    echo "Failed to delete record" . $stmt->error;
+}
 ?>

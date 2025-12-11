@@ -1,12 +1,9 @@
 <?php
 include '../config/config.php';
 
-//Connect block
-$conn = new mysqli("localhost", "root", "", "pbtusers");
+header('Content-Type: application/json');
 
-if($conn->connect_error) {
-    echo "Connection failed to db" . $conn->connect_error;
-}
+$response = ['success' => false, 'message' => ''];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") { //Ensure form was sent with post
     $name = $_POST['name']; //Get username nad password
@@ -23,18 +20,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") { //Ensure form was sent with post
 
         if (password_verify($password, $user['password'])) { //Verify password and username
             $_SESSION['username'] = $user['name'];
-            header('Location: /PBT/protected_pages/home.php');
-            exit();
+            $response['success'] = true;
+            $response['message'] = 'Logging you in...';
         }
         else {
-            echo "Incorrect password";
+            $response['message'] = "Incorrect password";
         }
     }
 
     else {
-        echo "No account under given username";
+        $response['message'] = "No account under given username";
     }
     $stmt->close();
 }
 $conn->close();
+echo json_encode($response);
 ?>
