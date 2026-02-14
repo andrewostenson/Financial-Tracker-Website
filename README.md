@@ -1,4 +1,4 @@
-# Financial-Tracker-Website
+# Personal Budget Tracker Web Application
 An introduction to personal budgeting built with HTML, JS, and PHP
 
 # Features
